@@ -1,4 +1,5 @@
 const express = require('express');
+const request = require('request');
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./db/index');
@@ -16,11 +17,11 @@ app.get('/rooms/testing', (req, res) => {
   })
 })
 
-app.get('/rooms/related-listings', (req, res) => {
-  let queryString = "SELECT * FROM listings";
-  db.query(queryString, (err, rows, fields) => {
-    res.json(rows);
-  })
+app.get('/rooms/related-listings/:id', (req, res) => {
+    let queryString = `SELECT * FROM listings WHERE listings_id = ${req.params.id}`;
+    db.query(queryString, (err, rows, fields) => {
+      res.json(rows);
+    });
 });
 
 app.listen(PORT, () => {

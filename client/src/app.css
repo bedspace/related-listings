@@ -141,11 +141,10 @@
 .modalContainer {
   visibility: hidden;
   font-family: Circular, -apple-system, system-ui, Roboto, "Helvetica Neue", sans-serif;
-  position: relative;
+  position: fixed;
   width: 568px;
   height: 618.5px;
   background-color: #fff;
-  position: absolute;
   top: 8%;
   left: 26%;
   box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 0.2);
