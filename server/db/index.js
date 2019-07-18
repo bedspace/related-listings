@@ -1,10 +1,11 @@
 const mysql = require('mysql');
 
 let connection = mysql.createConnection({
-  host: 'localhost',
+  host: 'host.docker.internal',
   user: 'root',
   password: '',
-  database: 'related_listings'
+  database: 'related_listings',
+  port: '3306'
 });
 
 connection.connect((err) => {

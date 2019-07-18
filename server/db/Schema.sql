@@ -42,7 +42,7 @@ CREATE TABLE user_info_testing(
 );
 
 
--- use mysql -uroot < ./server/Schema.sql
+-- use mysql -uroot < ./server/db/Schema.sql
 -- this initiates the database/tables
 -- also deletes the old database being used
 -- start from scratch

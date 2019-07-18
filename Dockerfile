@@ -1,7 +1,15 @@
-FROM mysql:5.7
+FROM node:alpine
 
-ENV MYSQL_DATABASE related_listings
+RUN mkdir -p /src
 
-COPY ./server/Schema.sql /docker-entrypoint-initdb.d/
+WORKDIR /src
 
-EXPOSE 3003
+COPY /package.json /src
+
+RUN npm install
+
+COPY . /src
+
+EXPOSE 3001
+
+CMD ["node", "server/index.js"]

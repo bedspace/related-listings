@@ -1,27 +1,29 @@
 version: "2.1"
 services:
   web:
+    container_name: rel_list_app
     image: related_listings
+    build: ./
     depends_on:
       database:
         condition: service_healthy
-    build: ./
-    ports: [2000,3001]
-
-  node:
-    image: "node:alpine"
+    ports: 
+      - "3001:3001"
 
   database:
+    container_name: localhost
     image: mysql:5.7
     environment:
-      MYSQL_HOST: database
-      MYSQL_ROOT_PASSWORD: "Amar"
+      MYSQL_HOST: "host.docker.internal"
+      MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
+      MYSQL_USER: "root"
+      MYSQL_ROOT_PASSWORD: ""
       MYSQL_DATABASE: related_listings
     volumes:
-      - ./Schema.sql:/docker-entrypoint-initdb.d/schema.sql
+      - ./server/db/Schema.sql:/docker-entrypoint-initdb.d/Schema.sql
     healthcheck:
-      test: ["CMD", "mysqladmin", 'ping', '-h', 'localhost']
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
       timeout: 20s
       retries: 3
     ports:
-      - 3003:3003
+      - "3307:3306"
