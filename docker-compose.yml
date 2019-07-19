@@ -8,13 +8,16 @@ services:
       database:
         condition: service_healthy
     ports: 
-      - "3001:3001"
+      - "80:3001"
+
+  databaseSeed:
+    build: ./server/db
 
   database:
     container_name: localhost
     image: mysql:5.7
     environment:
-      MYSQL_HOST: "host.docker.internal"
+      MYSQL_HOST: "localhost"
       MYSQL_ALLOW_EMPTY_PASSWORD: "yes"
       MYSQL_USER: "root"
       MYSQL_ROOT_PASSWORD: ""
