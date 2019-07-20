@@ -2,7 +2,7 @@ const db = require('../index');
 const faker = require('faker');
 
 let roomImgs = [];
-for(var i = 0; i < 28; i++){
+for(var i = 1; i <= 28; i++){
   roomImgs.push('https://fec-hrsf119.s3-us-west-1.amazonaws.com/im' + i + '.jpg');
 }
 
@@ -30,9 +30,9 @@ let randomThing = (arr) => {
 for(let i = 0; i <= 100; i++){
   let testQuery = `INSERT INTO listings (roomname, room_location, room_img, price, stars, reviews_num, liked, room__host_name, about_room, about_space, about_neighborhood) VALUES ('${randomThing(roomNames)}', '${randomThing(roomLocations)}', '${randomThing(roomImgs)}', ${price()}, ${starNum()}, ${reviewNum()}, 1, '${randomThing(firstNames)}', '${faker.lorem.sentence()}', '${faker.lorem.sentence()}', '${faker.lorem.sentence()}')`;
 
-  let testQuery2 = `INSERT INTO reviews (username, review_date, user_comment) VALUES ('${faker.name.firstName()} ${randomThing(lastNames)}', '2019-09-09', '${faker.lorem.sentence()}')`;
+  let testQuery2 = `INSERT INTO reviews (username, review_date, user_comment) VALUES ('${randomThing(firstNames)} ${randomThing(lastNames)}', '2019-09-09', '${faker.lorem.sentence()}')`;
 
-  let testQuery3 = `INSERT INTO user_info (first_name, last_name) VALUES ('${faker.name.firstName()}', '${randomThing(lastNames)}')`;
+  let testQuery3 = `INSERT INTO user_info (first_name, last_name) VALUES ('${randomThing(firstNames)}', '${randomThing(lastNames)}')`;
 
   db.query(testQuery, (error, results, fields) => {
     if(error){

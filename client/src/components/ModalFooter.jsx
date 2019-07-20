@@ -1,5 +1,4 @@
 import React from 'react';
-import faker from 'faker';
 import styles from '../app.css';
 
 const ModalFooter = ({ modalFooterClicked, overflow, height }) => (
@@ -27,22 +26,22 @@ const ModalFooter = ({ modalFooterClicked, overflow, height }) => (
         <hr className={styles.horizontalRule} />
         <div className={`${styles.modalAboutListing} ${styles.modalReviewsContainers}`}>
           <h2 className={styles.modalReviewsTitles}>About this listing</h2>
-          <p className={styles.modalReviewsPara}>{faker.lorem.paragraphs()}</p>
+          <p className={styles.modalReviewsPara}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus ultrices, malesuada diam vel, tempus leo. Nunc ligula massa, rhoncus eu odio sed, blandit rhoncus lectus. Aenean egestas justo sapien, eget aliquam ante auctor vel. In ac mi at augue consequat tempus. Aliquam eget nibh varius, convallis magna in, auctor leo. Maecenas varius, nisi ac pharetra finibus, velit nibh suscipit mauris, sit amet dictum dui nunc a enim. Suspendisse sit amet sapien semper, pulvinar dolor quis, tincidunt sapien. Vivamus vulputate feugiat eros quis hendrerit. Sed tempor est a massa euismod rhoncus. Nullam vitae ornare enim. Cras finibus dapibus ligula vel elementum. Vestibulum tincidunt ac felis eget elementum. Phasellus nec nunc condimentum, faucibus est quis, placerat nulla. Proin magna erat, facilisis id lacinia in, scelerisque non quam. Nam sed volutpat arcu. Fusce viverra posuere porta.</p>
         </div>
         <hr className={styles.horizontalRule} />
         <div className={`${styles.modalAboutSpace} ${styles.modalReviewsContainers}`}>
           <h2 className={styles.modalReviewsTitles}>About space</h2>
-          <p className={styles.modalReviewsPara}>{faker.lorem.sentences()}</p>
+          <p className={styles.modalReviewsPara}>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ut lacus ultrices, malesuada diam vel, tempus leo. Nunc ligula massa, rhoncus eu odio sed, blandit rhoncus lectus. Aenean egestas justo sapien, eget aliquam ante auctor vel. In ac mi at augue consequat tempus. Aliquam eget nibh varius, convallis magna in, auctor leo. Maecenas varius, nisi ac pharetra finibus, velit nibh suscipit mauris, sit amet dictum dui nunc a enim. Suspendisse sit amet sapien semper, pulvinar dolor quis, tincidunt sapien. Vivamus vulputate feugiat eros quis hendrerit. Sed tempor est a massa euismod rhoncus. Nullam vitae ornare enim. Cras finibus dapibus ligula vel elementum. Vestibulum tincidunt ac felis eget elementum. Phasellus nec nunc condimentum.</p>
         </div>
         <hr className={styles.horizontalRule} />
         <div className={`${styles.modalAboutNeighborhoods} ${styles.modalReviewsContainers}`}>
           <h2 className={styles.modalReviewsTitles}>Neighborhood</h2>
-          <p className={styles.modalReviewsPara}>{faker.lorem.paragraph()}</p>
+          <p className={styles.modalReviewsPara}>Duis quam enim, pulvinar et est quis, ultricies luctus leo. Duis eget ex laoreet, dictum enim at, vestibulum lectus. Nulla quis urna magna. In luctus purus augue. Etiam orci massa, mollis sit amet libero sed, pulvinar varius nibh. Nulla tincidunt tempor leo, et dignissim augue ultrices ut. Aenean tincidunt feugiat felis quis mollis. Mauris eget sem eget augue accumsan blandit. Duis eu enim dolor. Sed sem urna, pellentesque non sodales id, viverra eu felis. Praesent commodo ligula justo.</p>
         </div>
         <hr className={styles.horizontalRule} />
         <div className={styles.modalReviewsContainers}>
           <h2 className={styles.modalReviewsTitles}>Reviews</h2>
-          <p className={styles.modalReviewsPara}>{faker.lorem.paragraphs()}</p>
+          <p className={styles.modalReviewsPara}>Sed ultrices, nulla id aliquam accumsan, nibh velit tempor mauris, at iaculis tellus nisi nec massa. Nunc varius commodo ligula, in semper augue dignissim nec. Vivamus cursus euismod luctus. Nam tristique fermentum lobortis. Mauris mi massa, feugiat at ipsum quis, viverra tempus lacus. Proin laoreet massa vitae maximus dapibus. Pellentesque vulputate augue in sodales euismod. Maecenas eu pretium neque. Sed dapibus massa a mi lacinia, sit amet scelerisque nisi euismod. Pellentesque imperdiet dolor nisl, in pretium felis ultrices nec. Pellentesque auctor elementum odio, at lacinia quam pellentesque eget.</p>
         </div>
       </div>
     </div>

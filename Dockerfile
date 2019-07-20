@@ -13,3 +13,4 @@ COPY . /src
 EXPOSE 3001
 
 CMD ["node", "server/index.js"]
+# CMD sleep 30 && node server

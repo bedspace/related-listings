@@ -23,20 +23,21 @@ class App extends React.Component {
 
   componentDidMount() {
     const reducedData = [];
-    let randomStart = Math.floor(Math.random() * 88);
-    for(var i = randomStart; i <= 100; i++){
-      fetch(`/rooms/related-listings/${i}`)
-        .then(res => res.json())
-        .then((json) => {
-          json.forEach((data) => {
-            if (reducedData.length <= 10) {
-              reducedData.push(data);
-            }
-          });
-          this.setState({
-            roomInfo: reducedData,
-          });
+    let randomStart = Math.floor(Math.random() * 87) + 1;
+    let randomEnd = randomStart + 15;
+    for(var i = randomStart; i <= randomEnd; i++){
+    fetch(`/rooms/related-listings/${i}`)
+      .then(res => res.json())
+      .then((json) => {
+        json.forEach((data) => {
+          if (reducedData.length <= 10) {
+            reducedData.push(data);
+          }
         });
+        this.setState({
+          roomInfo: reducedData,
+        });
+      });
     }
   }
 
@@ -74,6 +75,7 @@ class App extends React.Component {
     return (
       this.state.heartClicked ? (
         <div>
+        <div className={styles.mainContainer}>
           <div style={{ opacity: '0.3' }}>
             <div className={styles.buttonContainer}>
               {this.state.count === 0 ? (
@@ -100,9 +102,11 @@ class App extends React.Component {
           </div>
           <Modal roomInfo={this.state.roomInfo} heartClicked={this.state.heartClicked} heartClickedF={this.heartClickFunction} visibility="visible" />
         </div>
+        </div>
       ) : (
         <div>
-          <div>
+        <div className={styles.mainContainer}>
+          <div >
             <div className={styles.buttonContainer}>
               {this.state.count === 0 ? (
                 <div className={styles.leftButton} onClick={() => { this.subtractCount(), this.translateXPlus(); }} style={{ visibility: 'hidden' }} />
@@ -127,6 +131,7 @@ class App extends React.Component {
             </div>
           </div>
           <Modal visibility="hidden" />
+        </div>
         </div>
       )
     );
