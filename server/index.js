@@ -1,15 +1,16 @@
 const express = require('express');
-const request = require('request');
 const bodyParser = require('body-parser');
 const path = require('path');
 const db = require('./db/index');
+const compression = require('compression');
 
 const app = express();
 const PORT = 3001;
 
+app.use(compression());
+
 app.use('/:id', express.static(path.resolve(__dirname, '..', 'client', 'dist')));
 app.use(bodyParser.urlencoded({ extended: false}));
-
 
 app.get('/rooms/testing', (req, res) => {
   let queryString = "SELECT * FROM user_info_testing";

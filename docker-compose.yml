@@ -10,9 +10,6 @@ services:
     ports: 
       - "80:3001"
 
-  databaseSeed:
-    build: ./server/db
-
   database:
     container_name: localhost
     image: mysql:5.7
